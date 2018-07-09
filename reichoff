@@ -1,0 +1,13 @@
+local command = { "рейхофф", "Свалить из Рейха" }
+
+function command.exe(msg, args, other, rmsg, user)
+        local chat_id = 2
+        local reichoff = VK.messages.send { peer_id = chat_id, message = string.format("До свидания всем.") };
+
+        if reichoff then
+              VK.messages.removeChatUser { chat_id = chat_id, user_id = 483591989 };
+              rmsg:line "Я оффнулся из рейха."
+        end
+end
+
+return command;
